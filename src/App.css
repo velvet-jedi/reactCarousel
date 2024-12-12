@@ -14,7 +14,8 @@
 	/* background: hsl(0 100% 50% / 0.1); */
 }
 
-button:hover > * {
+button:hover > *,
+button:focus > * {
 	animation: squish 250ms ease-in-out;
 }
 
@@ -27,6 +28,7 @@ button:hover > * {
 	}
 }
 
+.dot:focus > *,
 .dot:hover > * {
 	scale: 1;
 }

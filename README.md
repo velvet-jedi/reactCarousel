@@ -76,3 +76,7 @@ Slightly more initial setup required.
 -   important css properties utilized: flex-shrink-0 (prevents the card containing div from collapsing horizontally and not stick to each other), object-cover
 
 -   animated buttons using keyframes animation
+
+Accessibility improvements:
+
+-   Hover styles must be and are also applied to focus states improves accessibility, especially for users who navigate with a keyboard or assistive devices.
