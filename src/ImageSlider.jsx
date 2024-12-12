@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 
 const ImageSlider = ({ data }) => {
-	const [imageIndex, setImageIndex] = useState(0);
+	const [imageIndex, setImageIndex] = useState(0); // state for active index
 
 	const showPreviousImage = () => {
 		setImageIndex(imageIndex === 0 ? data.length - 1 : imageIndex - 1);
@@ -13,44 +13,61 @@ const ImageSlider = ({ data }) => {
 	};
 
 	return (
-		<div className="flex relative w-full max-w-lg h-full items-center justify-center">
+		<div className="flex relative max-w-xl items-center">
+			{/* This is the main wrapper for the entire slider */}
+			{/* so that children get placed absolutely in the center of it*/}
+			{/* max-w-xl limits the maximum width of the slider */}
+
 			{/* Left Arrow */}
 			<button
-				className="absolute left-2 z-10 p-2 bg-gray-300 text-black rounded-full"
+				className="absolute left-8 z-10 p-3 bg-gray-300 text-black rounded-full"
 				onClick={showPreviousImage}
 			>
 				<ArrowBigLeft />
 			</button>
 
-			{/* Slider Container */}
-			<div className="w-full h-full flex gap-4 overflow-hidden">
-				{data.map((d, index) => (
-					<div
-						key={index}
-						style={{
-							transform: `translateX(-${100 * imageIndex}%)`,
-							transition: "transform 0.5s ease-in-out",
-						}}
-						className="card flex-shrink-0 w-[300px] text-black bg-purple-100 h-[400px] rounded-xl"
-					>
-						<div className="h-56 image rounded-t-xl flex justify-center bg-indigo-500 items-center">
-							<img
-								className={`h-44 w-44 rounded-full object-cover`}
-								src={d.img}
-								alt={`Testimonial from ${d.name}`}
-							/>
+			{/* Contains the actual slider content */}
+			{/* overflow-hidden prevents seeing content outside the slider's width */}
+			{/* full width for the slider so that one card takes the view horizontally fully withtin a parent*/}
+			<div className="flex overflow-hidden w-full items-center justify-center">
+				{/* Sliding Mechanism */}
+				<div
+					style={{
+						transform: `translateX(-${100 * imageIndex}%)`,
+						transition: "transform 0.5s ease-in-out",
+					}}
+					className="flex w-full"
+				>
+					{data.map((d, index) => (
+                        // Each card is wrapped in a full-width div that centers it
+						<div
+							key={index}
+							className="flex-shrink-0 w-[100%]  flex items-center justify-center"
+						>
+                            {/* Card has a fixed width and height */}
+							<div className="card w-[300px] h-[400px] bg-purple-100 rounded-xl text-black">
+								<div className="h-56 rounded-t-xl flex justify-center bg-indigo-500 items-center">
+									<img
+										className="h-44 w-44 rounded-full object-cover"
+										src={d.img}
+										alt={`Testimonial from ${d.name}`}
+									/>
+								</div>
+								<div className="flex flex-col items-center justify-center gap-4 text-center p-4">
+									<p className="font-semibold text-xl">
+										{d.name}
+									</p>
+									<p>{d.review}</p>
+								</div>
+							</div>
 						</div>
-						<div className="flex flex-col items-center justify-center gap-4 text-center p-4">
-							<p className="font-semibold text-xl">{d.name}</p>
-							<p>{d.review}</p>
-						</div>
-					</div>
-				))}
+					))}
+				</div>
 			</div>
 
 			{/* Right Arrow */}
 			<button
-				className="absolute right-2 z-10 p-2 bg-gray-300 text-black rounded-full"
+				className="absolute right-8 z-10 p-3 bg-gray-300 text-black rounded-full"
 				onClick={showNextImage}
 			>
 				<ArrowBigRight />

@@ -5,3 +5,11 @@
 #root {
 	margin: 0 auto;
 }
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	outline: 2px solid lime;
+	/* background: hsl(0 100% 50% / 0.1); */
+}
