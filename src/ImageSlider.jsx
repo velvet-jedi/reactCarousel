@@ -5,19 +5,33 @@ import { ArrowBigLeft, ArrowBigRight } from "lucide-react";
 const ImageSlider = ({ data }) => {
 	const [imageIndex, setImageIndex] = useState(0);
 
+	const showPreviousImage = () => {
+		if (imageIndex === 0) {
+			setImageIndex(data.length - 1);
+		} else {
+			setImageIndex(imageIndex - 1);
+		}
+	};
+	const showNextImage = () => {
+		if (imageIndex === data.length - 1) {
+			setImageIndex(0);
+		} else {
+			setImageIndex(imageIndex + 1);
+		}
+	};
+
 	return (
 		<div className="flex justify-center gap-20 items-center">
 			<div className="">
-				<button>
+				<button onClick={showPreviousImage}>
 					<ArrowBigLeft></ArrowBigLeft>
 				</button>
 			</div>
 			<div className="">
-				{/* {data.map((d, index) => ( */}
-				<div className="card text-black bg-purple-100 h-[350px] rounded-xl">
-					<div className="h-56 image rounded-t-xl flex justify-center bg-indigo-500 items-center">
+				<div className=" card text-black bg-purple-100 h-[400px] rounded-xl">
+					<div className="h-64 image rounded-t-xl flex justify-center bg-indigo-500 items-center">
 						<img
-							className="h-44 w-44 rounded-full"
+							className="h-52 w-52 rounded-full"
 							src={data[imageIndex].img}
 							alt="testimonial image"
 						/>
@@ -29,10 +43,9 @@ const ImageSlider = ({ data }) => {
 						<p>{data[imageIndex].review}</p>
 					</div>
 				</div>
-				{/* ))} */}
 			</div>
 			<div className="">
-				<button>
+				<button onClick={showNextImage}>
 					<ArrowBigRight></ArrowBigRight>
 				</button>
 			</div>
