@@ -6,7 +6,10 @@
 
 -   possibly do image optimizations
 
+Logical Decisions:
 
+-   Some state for the index being shown
+-   lucide-react library for icons
 
 Note on Approaches to Image Carousel Implementation
 Approach 1: Direct Implementation in Parent Component
