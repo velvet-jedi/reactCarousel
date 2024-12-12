@@ -25,7 +25,7 @@ const ImageSlider = ({ data }) => {
 					className="absolute left-8 z-10 p-3 bg-gray-300 text-black rounded-full"
 					onClick={showPreviousImage}
 				>
-					<ArrowBigLeft aria-hidden/>
+					<ArrowBigLeft aria-hidden />
 				</button>
 
 				{/* Contains the actual slider content */}
@@ -50,6 +50,7 @@ const ImageSlider = ({ data }) => {
 								<div className="card w-[300px] h-[400px] bg-purple-100 rounded-xl text-black">
 									<div className="h-56 rounded-t-xl flex justify-center bg-indigo-500 items-center">
 										<img
+											aria-hidden={imageIndex !== index}
 											className="h-44 w-44 rounded-full object-cover"
 											src={d.img}
 											alt={`Testimonial from ${d.name}`}
@@ -73,7 +74,7 @@ const ImageSlider = ({ data }) => {
 					className="absolute right-8 z-10 p-3 bg-gray-300 text-black rounded-full"
 					onClick={showNextImage}
 				>
-					<ArrowBigRight aria-hidden/>
+					<ArrowBigRight aria-hidden />
 				</button>
 				<div className="absolute flex translate-x-[-50%] bottom-[0.5rem] left-[50%]">
 					{data.map((_, index) => (
