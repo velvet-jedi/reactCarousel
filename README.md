@@ -41,3 +41,5 @@ Better scalability for growing applications.
 Cons:
 
 Slightly more initial setup required.
+
+--- as I introduced the state variable for active index, I removed the map, but later I decided to load all the images into the DOM at once (coz I only have 12 images) and brought back map. Also to create smooth animations you need them in the DOM already
