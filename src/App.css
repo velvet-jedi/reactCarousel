@@ -10,6 +10,19 @@
 *::after,
 *::before {
 	box-sizing: border-box;
-	outline: 2px solid lime;
-	/* background: hsl(0 100% 50% / 0.1); */
+	/* outline: 2px solid lime;
+	background: hsl(0 100% 50% / 0.1); */
+}
+
+button:hover > * {
+	animation: squish 250ms ease-in-out;
+}
+
+@keyframes squish {
+	25% {
+		scale: 1.2 1.2;
+	}
+	50% {
+		scale: 1.4 0.6;
+	}
 }
