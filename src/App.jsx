@@ -68,6 +68,7 @@ function App() {
 	return (
 		<>
 			<ImageSlider data={carouselData}></ImageSlider>
+			<a href="/">Link</a>
 		</>
 	);
 }

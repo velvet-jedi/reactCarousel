@@ -34,6 +34,41 @@ body {
 	min-height: 100vh;
 }
 
+.skip-link {
+	position: absolute;
+	/* Positions the link outside the normal document flow so it doesn't disrupt the layout of the page. */
+	width: 1px;
+	height: 1px;
+	/* Shrinks the link to a very small, barely noticeable size when it's not focused. */
+	overflow: hidden;
+
+	/* Removes any additional space or visible outline that might interfere with the design. */
+	padding: 0;
+	border: 0;
+	/* Moves the element slightly out of view, reinforcing its hidden state. */
+	margin: -1px;
+	/* Defines a clipping region of 0 width and 0 height, effectively making the link invisible. */
+	clip: rect(0, 0, 0, 0);
+}
+
+.skip-link:focus-visible {
+	top: 0;
+	left: 0;
+	border: 1px solid black;
+	background: #fff; /* Adds a visible background */
+	padding: 0.5rem; /* Adds padding for better clickability */
+	width: auto; /* Expands the width */
+	height: auto; /* Expands the height */
+	margin: 0;
+	text-decoration: none;
+	clip: unset; /* Removes the clipping */
+	color: black;
+}
+
+* {
+	user-select: none;
+}
+
 h1 {
 	font-size: 3.2em;
 	line-height: 1.1;

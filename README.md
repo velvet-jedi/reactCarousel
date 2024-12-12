@@ -91,3 +91,5 @@ Key difference: :focus-visible is better for accessibility as it avoids showing 
 -   Using aria-hidden="true" on images inside icons because the label text for the button already describes the action (no need for screen reader to read the image of the icon)
 
 -   hide hidden inactive images from screen readers using aria-hidden
+
+-   skip link to give user a chice to skip over the controls directly jump over to some other section. The skip link is styled to be visible to only people going to tab over the elements and use screen readers

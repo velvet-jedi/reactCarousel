@@ -13,7 +13,13 @@ const ImageSlider = ({ data }) => {
 	};
 
 	return (
-		<>
+		<div>
+			<a
+				href="#after-image-slider-controls"
+				className="skip-link"
+			>
+				Skip image slider controls
+			</a>
 			<section
 				aria-label="image carousel"
 				className="flex relative max-w-xl items-center"
@@ -95,8 +101,9 @@ const ImageSlider = ({ data }) => {
 						</button>
 					))}
 				</div>
+				<div id="after-image-slider-controls"></div>
 			</section>
-		</>
+		</div>
 	);
 };
 
