@@ -1,16 +1,16 @@
 # Layout
 
-[Entire Slider Container - Wide, Centered]      The main container is like the stage
+[Entire Slider Container - Wide, Centered] The main container is like the stage
 │
-├── [Left Navigation Arrow] ←── Floating on left side    Nav arrows are like side curtains we can pull
+├── [Left Navigation Arrow] ←── Floating on left side Nav arrows are like side curtains we can pull
 │
-├── [Slider Window]         The slider window is like a moving spotlight
-│   │
-│   └── [Sliding Track]
-│       │
-│       ├── [Card 1] ───┐
-│       ├── [Card 2] │ All cards lined up horizontally  Like an actor waiting to slide into view
-│       └── [Card 3] ───┘
+├── [Slider Window] The slider window is like a moving spotlight
+│ │
+│ └── [Sliding Track]
+│ │
+│ ├── [Card 1] ───┐
+│ ├── [Card 2] │ All cards lined up horizontally Like an actor waiting to slide into view
+│ └── [Card 3] ───┘
 │
 │
 └── [Right Navigation Arrow] ←── Floating on right side
@@ -85,3 +85,5 @@ Accessibility improvements:
     :focus-visible applies only when focus is obvious or expected (e.g., via keyboard Tab or screen reader, but not mouse).
 
 Key difference: :focus-visible is better for accessibility as it avoids showing focus styles for mouse clicks.
+
+-   aria-label to label elements for screen readers only

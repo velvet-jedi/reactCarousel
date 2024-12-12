@@ -21,6 +21,7 @@ const ImageSlider = ({ data }) => {
 
 				{/* Left Arrow */}
 				<button
+					aria-label="View Previous Image"
 					className="absolute left-8 z-10 p-3 bg-gray-300 text-black rounded-full"
 					onClick={showPreviousImage}
 				>
@@ -68,6 +69,7 @@ const ImageSlider = ({ data }) => {
 
 				{/* Right Arrow */}
 				<button
+					aria-label="View Next Image"
 					className="absolute right-8 z-10 p-3 bg-gray-300 text-black rounded-full"
 					onClick={showNextImage}
 				>
@@ -76,6 +78,7 @@ const ImageSlider = ({ data }) => {
 				<div className="absolute flex translate-x-[-50%] bottom-[0.5rem] left-[50%]">
 					{data.map((_, index) => (
 						<button
+							aria-label={`View Image ${index + 1}`}
 							key={index}
 							className="rounded-full dot"
 							onClick={() => setImageIndex(index)}
