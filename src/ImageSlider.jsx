@@ -14,7 +14,10 @@ const ImageSlider = ({ data }) => {
 
 	return (
 		<>
-			<div className="flex relative max-w-xl items-center">
+			<section
+				aria-label="image carousel"
+				className="flex relative max-w-xl items-center"
+			>
 				{/* This is the main wrapper for the entire slider */}
 				{/* so that children get placed absolutely in the center of it*/}
 				{/* max-w-xl limits the maximum width of the slider */}
@@ -92,7 +95,7 @@ const ImageSlider = ({ data }) => {
 						</button>
 					))}
 				</div>
-			</div>
+			</section>
 		</>
 	);
 };
