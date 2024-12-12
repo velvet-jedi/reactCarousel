@@ -10,8 +10,8 @@
 *::after,
 *::before {
 	box-sizing: border-box;
-	/* outline: 2px solid lime;
-	background: hsl(0 100% 50% / 0.1); */
+	/* outline: 2px solid lime; */
+	/* background: hsl(0 100% 50% / 0.1); */
 }
 
 button:hover > * {
@@ -25,4 +25,18 @@ button:hover > * {
 	50% {
 		scale: 1.4 0.6;
 	}
+}
+
+.dot:hover > * {
+	scale: 1;
+}
+.dot > * {
+	stroke: indigo;
+	fill: purple;
+	scale: 0.5;
+	height: 100%;
+	width: 100%;
+}
+.dot {
+	scale: 0.8;
 }
