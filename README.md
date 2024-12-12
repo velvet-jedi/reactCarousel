@@ -87,3 +87,5 @@ Accessibility improvements:
 Key difference: :focus-visible is better for accessibility as it avoids showing focus styles for mouse clicks.
 
 -   aria-label to label elements for screen readers only
+
+-   Using aria-hidden="true" on images inside icons because the label text for the button already describes the action (no need for screen reader to read the image of the icon)

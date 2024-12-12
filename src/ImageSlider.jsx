@@ -25,7 +25,7 @@ const ImageSlider = ({ data }) => {
 					className="absolute left-8 z-10 p-3 bg-gray-300 text-black rounded-full"
 					onClick={showPreviousImage}
 				>
-					<ArrowBigLeft />
+					<ArrowBigLeft aria-hidden/>
 				</button>
 
 				{/* Contains the actual slider content */}
@@ -73,7 +73,7 @@ const ImageSlider = ({ data }) => {
 					className="absolute right-8 z-10 p-3 bg-gray-300 text-black rounded-full"
 					onClick={showNextImage}
 				>
-					<ArrowBigRight />
+					<ArrowBigRight aria-hidden/>
 				</button>
 				<div className="absolute flex translate-x-[-50%] bottom-[0.5rem] left-[50%]">
 					{data.map((_, index) => (
@@ -84,9 +84,9 @@ const ImageSlider = ({ data }) => {
 							onClick={() => setImageIndex(index)}
 						>
 							{index === imageIndex ? (
-								<CircleDot></CircleDot>
+								<CircleDot aria-hidden></CircleDot>
 							) : (
-								<Circle></Circle>
+								<Circle aria-hidden></Circle>
 							)}
 						</button>
 					))}
