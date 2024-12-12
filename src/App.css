@@ -28,6 +28,7 @@ button:focus > * {
 	}
 }
 
+.dot:focus-visible > *,
 .dot:focus > *,
 .dot:hover > * {
 	scale: 1;
@@ -41,4 +42,25 @@ button:focus > * {
 }
 .dot {
 	scale: 0.8;
+}
+
+dot:focus-visible {
+	outline: 4px solid indigo;
+	outline-offset: 2px;
+}
+button:focus-visible {
+	outline: 6px solid #4f46e5; /* Customize color */
+	border-radius: 50%; /* Optional: for rounded buttons */
+}
+
+.dot:focus-visible,
+button:focus-visible {
+	outline: 4px solid indigo; /* Customize outline for better visibility */
+	outline-offset: 2px; /* Optional: adds space between the outline and element */
+}
+
+/* Optional: Additional focus-visible styling for buttons */
+button:focus-visible {
+	outline: 6px solid #4f46e5; /* Customize color */
+	border-radius: 50%; /* Optional: for rounded buttons */
 }

@@ -1,16 +1,16 @@
 # Layout
 
-[Entire Slider Container - Wide, Centered] The main container is like the stage
+[Entire Slider Container - Wide, Centered]      The main container is like the stage
 │
-├── [Left Navigation Arrow] ←── Floating on left side Nav arrows are like side curtains we can pull
+├── [Left Navigation Arrow] ←── Floating on left side    Nav arrows are like side curtains we can pull
 │
-├── [Slider Window] The slider window is like a moving spotlight
-│ │
-│ └── [Sliding Track]
-│ │
-│ ├── [Card 1] ───┐
-│ ├── [Card 2] │ All cards lined up horizontally Like an actor waiting to slide into view
-│ └── [Card 3] ───┘
+├── [Slider Window]         The slider window is like a moving spotlight
+│   │
+│   └── [Sliding Track]
+│       │
+│       ├── [Card 1] ───┐
+│       ├── [Card 2] │ All cards lined up horizontally  Like an actor waiting to slide into view
+│       └── [Card 3] ───┘
 │
 │
 └── [Right Navigation Arrow] ←── Floating on right side
@@ -80,3 +80,8 @@ Slightly more initial setup required.
 Accessibility improvements:
 
 -   Hover styles must be and are also applied to focus states improves accessibility, especially for users who navigate with a keyboard or assistive devices.
+
+-   :focus applies whenever an element gains focus, regardless of how (keyboard, mouse, or programmatically).
+    :focus-visible applies only when focus is obvious or expected (e.g., via keyboard Tab or screen reader, but not mouse).
+
+Key difference: :focus-visible is better for accessibility as it avoids showing focus styles for mouse clicks.
