@@ -1,8 +1,12 @@
 # Image Slider Component
 
+![alt text](image-1.png)
+[View Live](https://react-carousel-gamma.vercel.app/)
+
 ## Architectural Overview
 
 ### Visual Structure
+
 ![alt text](image.png)
 
 When you click next/previous:
@@ -17,11 +21,7 @@ The magic happens with translateX, which literally pushes the entire track of ca
 
 The transition property is crucial in providing the sense of direction and smoothness in the sliding animation.
 
---- as I introduced the state variable for active index, I removed the map, but later I decided to load all the images into the DOM at once (coz I only have 12 images) and brought back map. Also to create smooth animations you need them in the DOM already
-
--   important css properties utilized: flex-shrink-0 (prevents the card containing div from collapsing horizontally and not stick to each other), object-cover
-
--   animated buttons using keyframes animation
+-   as I introduced the state variable for active index, I removed the map, but later I decided to load all the images into the DOM at once (coz I only have 12 images) and brought back map. Also to create smooth animations you need them in the DOM already
 
 Accessibility improvements:
 
@@ -39,8 +39,6 @@ Key difference: :focus-visible is better for accessibility as it avoids showing 
 -   hide hidden inactive images from screen readers using aria-hidden
 
 -   skip link to give user a chice to skip over the controls directly jump over to some other section. The skip link is styled to be visible to only people going to tab over the elements and use screen readers
-
---
 
 ## Core Design Principles
 
