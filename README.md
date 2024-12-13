@@ -1,16 +1,19 @@
-# Layout
+# Image Slider Component
 
-[Entire Slider Container - Wide, Centered] The main container is like the stage
+## Architectural Overview
+
+### Visual Structure
+[Entire Slider Container - Wide, Centered]      The main container is like the stage
 │
-├── [Left Navigation Arrow] ←── Floating on left side Nav arrows are like side curtains we can pull
+├── [Left Navigation Arrow] ←── Floating on left side    Nav arrows are like side curtains we can pull
 │
-├── [Slider Window] The slider window is like a moving spotlight
-│ │
-│ └── [Sliding Track]
-│ │
-│ ├── [Card 1] ───┐
-│ ├── [Card 2] │ All cards lined up horizontally Like an actor waiting to slide into view
-│ └── [Card 3] ───┘
+├── [Slider Window]         The slider window is like a moving spotlight
+│   │
+│   └── [Sliding Track]
+│       │
+│       ├── [Card 1] ───┐
+│       ├── [Card 2] │ All cards lined up horizontally  Like an actor waiting to slide into view
+│       └── [Card 3] ───┘
 │
 │
 └── [Right Navigation Arrow] ←── Floating on right side
@@ -26,50 +29,6 @@ The translateX property works by moving the entire card container horizontally b
 The magic happens with translateX, which literally pushes the entire track of cards horizontally, creating the illusion of navigation while keeping everything aligned and centered.
 
 The transition property is crucial in providing the sense of direction and smoothness in the sliding animation.
-
--   tailwind
--   react
--   testimonials carousel
--   accessiblity
--   keyboard nav
-
--   possibly do image optimizations
-
-Logical Decisions:
-
--   Some state for the index being shown
--   lucide-react library for icons
-
-Note on Approaches to Image Carousel Implementation
-Approach 1: Direct Implementation in Parent Component
-Pros:
-
-Simplicity for small projects.
-
-Direct access to logic and rendering.
-
-Cons:
-
-Code clutter in the parent component.
-
-Poor reusability across the application.
-
-Limited maintainability and scalability.
-
-Approach 2: Using a Child Component (ImageSlider)
-Pros:
-
-Separation of concerns enhances readability and maintainability.
-
-High reusability for different parts of the application.
-
-Modularity allows independent development and testing.
-
-Better scalability for growing applications.
-
-Cons:
-
-Slightly more initial setup required.
 
 --- as I introduced the state variable for active index, I removed the map, but later I decided to load all the images into the DOM at once (coz I only have 12 images) and brought back map. Also to create smooth animations you need them in the DOM already
 
@@ -93,3 +52,78 @@ Key difference: :focus-visible is better for accessibility as it avoids showing 
 -   hide hidden inactive images from screen readers using aria-hidden
 
 -   skip link to give user a chice to skip over the controls directly jump over to some other section. The skip link is styled to be visible to only people going to tab over the elements and use screen readers
+
+--
+
+## Core Design Principles
+
+### Sliding Mechanism
+
+-   The entire "sliding track" shifts left or right
+-   Only one card is fully visible at a time
+-   Smooth transition, resembling a gentle camera pan
+
+### Key Technical Implementations
+
+-   `translateX` property moves the card container horizontally
+-   State management tracks the current `imageIndex`
+-   Transition property provides animation smoothness
+
+## Technology Stack
+
+-   React
+-   Tailwind CSS
+-   Lucide React (for icons)
+
+## Implementation Approaches
+
+### Approach 1: Direct Implementation
+
+**Pros:**
+
+-   Simplicity for small projects
+-   Direct access to logic and rendering
+
+**Cons:**
+
+-   Code clutter in parent component
+-   Limited reusability
+-   Poor maintainability
+
+### Approach 2: Dedicated Component (Recommended)
+
+**Pros:**
+
+-   Separation of concerns
+-   High reusability
+-   Modularity
+-   Independent development and testing
+
+## Technical Decisions
+
+### State Management
+
+-   Introduced `imageIndex` state variable
+-   Initially removed `map()`, then restored to load all images
+-   Decision to load all 12 images into DOM for smooth animations
+
+### Critical CSS Properties
+
+-   `flex-shrink-0`: Prevents card divs from collapsing
+-   `object-cover`: Ensures image scaling maintains aspect ratio
+
+## Accessibility Enhancements
+
+### Focus and Interaction
+
+-   Hover styles applied to focus states
+-   `:focus` vs `:focus-visible` differentiation
+    -   `:focus`: Applies on any focus acquisition
+    -   `:focus-visible`: Applies only on keyboard/assistive device focus
+
+### Screen Reader Optimization
+
+-   `aria-label` for contextual labeling
+-   `aria-hidden="true"` on redundant icons
+-   Hide inactive images from screen readers
+-   Optional skip link for navigation bypass
